@@ -22,7 +22,7 @@ public class EmployeeController {
     }
 
     @PutMapping("/put/{id}")
-    public Employee put(@PathVariable Long id, @RequestBody Employee employee){
+    public boolean put(@PathVariable Long id,@RequestBody Employee employee){
         return employeeService.update(id,employee);
     }
     @DeleteMapping("/delete/{id}")
