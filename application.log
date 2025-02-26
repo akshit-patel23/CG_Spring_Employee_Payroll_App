@@ -9,3 +9,4 @@
 2025-02-26T18:54:55.820+05:30  WARN 29420 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
 2025-02-26T18:54:56.660+05:30  INFO 29420 --- [main] c.e.e.EmployeepayrollApplication         : Started EmployeepayrollApplication in 10.103 seconds (process running for 11.19)
 2025-02-26T18:54:56.667+05:30  INFO 29420 --- [main] c.e.e.EmployeepayrollApplication         : Application has Started
+2025-02-26T20:49:05.550+05:30  WARN 29420 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h36m12s123ms475µs900ns).
