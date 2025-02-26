@@ -1,5 +1,6 @@
 package com.example.employeepayroll;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -36,6 +37,7 @@ public class EmployeeServices {
             return employeeRepository.save(employee);
         }).orElse(null);
     }
+
     public Optional<Employee> check(long id){
         return employeeRepository.findById(id);
     }
