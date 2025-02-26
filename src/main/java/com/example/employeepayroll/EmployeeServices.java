@@ -1,5 +1,6 @@
 package com.example.employeepayroll;
 
+import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,8 +15,8 @@ public class EmployeeServices {
 
     @Autowired
     private EmployeeRepository employeeRepository;
-    public Employee add(Employee employee){
-        list.add(employee);
+    public Employee add(@Valid Employee employee){
+
         return employeeRepository.save(employee);
     }
 
@@ -31,7 +32,7 @@ public class EmployeeServices {
         return employeeRepository.findAll();
     }
 
-    public Employee update(long id ,Employee updateEmployee) {
+    public Employee update(long id ,@Valid Employee updateEmployee) {
         return employeeRepository.findById(id).map(employee -> {employee.setName(updateEmployee.getName());
             employee.setSalary(updateEmployee.getSalary());
             return employeeRepository.save(employee);
