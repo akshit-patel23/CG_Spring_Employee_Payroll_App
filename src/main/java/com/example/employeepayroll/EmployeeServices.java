@@ -1,7 +1,6 @@
 package com.example.employeepayroll;
 
 import jakarta.validation.Valid;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -25,7 +24,10 @@ public class EmployeeServices {
             employeeRepository.deleteById(id);
             return true;
         }
-        return false;
+        else{
+            throw new EmployeeNotFound("Employee not found");
+        }
+
     }
     public List<Employee> fetchAll(){
 
@@ -36,10 +38,10 @@ public class EmployeeServices {
         return employeeRepository.findById(id).map(employee -> {employee.setName(updateEmployee.getName());
             employee.setSalary(updateEmployee.getSalary());
             return employeeRepository.save(employee);
-        }).orElse(null);
+        }).orElseThrow(() -> new EmployeeNotFound("Employee not found"));
     }
 
     public Optional<Employee> check(long id){
-        return employeeRepository.findById(id);
+        return Optional.ofNullable( employeeRepository.findById(id).orElseThrow(() -> new EmployeeNotFound("Employee not found.")));
     }
 }
