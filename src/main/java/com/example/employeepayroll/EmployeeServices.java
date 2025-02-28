@@ -1,6 +1,5 @@
 package com.example.employeepayroll;
 
-import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -8,7 +7,6 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-
 @Slf4j
 @Service
 public class EmployeeServices {
@@ -16,9 +14,12 @@ public class EmployeeServices {
 
     @Autowired
     private EmployeeRepository employeeRepository;
-    public Employee add(@Valid Employee employee){
+    public Employee add(Employee employee){
+        Employee emp=null;
+        emp=new Employee(employee);
 
-        return employeeRepository.save(employee);
+        list.add(employee);
+        return employeeRepository.save(emp);
     }
 
     public boolean deleting(Long id) {
@@ -26,7 +27,7 @@ public class EmployeeServices {
             employeeRepository.deleteById(id);
             return true;
         }
-        else{
+        else {
             throw new EmployeeNotFound("Employee not found");
         }
 
@@ -36,14 +37,12 @@ public class EmployeeServices {
         return employeeRepository.findAll();
     }
 
-    public Employee update(long id ,@Valid Employee updateEmployee) {
+    public Employee update(long id ,Employee updateEmployee) {
         return employeeRepository.findById(id).map(employee -> {employee.setName(updateEmployee.getName());
             employee.setSalary(updateEmployee.getSalary());
             return employeeRepository.save(employee);
         }).orElseThrow(() -> new EmployeeNotFound("Employee not found"));
     }
-
     public Optional<Employee> check(long id){
-        return Optional.ofNullable( employeeRepository.findById(id).orElseThrow(() -> new EmployeeNotFound("Employee not found.")));
-    }
-}
+        return Optional.ofNullable(employeeRepository.findById(id).orElseThrow(() -> new EmployeeNotFound("Employee not found.")));
+    }}
