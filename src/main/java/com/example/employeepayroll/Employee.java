@@ -38,6 +38,7 @@ public class Employee {
     @NotBlank(message = "Profile Pic cannot be empty")
     public String profilePic;
     @ElementCollection(fetch = FetchType.EAGER)
+    //This tells Hibernate to store the List<String> in a separate table because databases cannot directly store lists or collections in a single column. Instead, Hibernate creates a new table to store these values and links them to the main employees table using a foreign key.
     @CollectionTable(name = "employee_department", joinColumns = @JoinColumn(name = "employee_id"))
     @Column(name = "department")
     @NotEmpty(message = "Department cannot be empty")

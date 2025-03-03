@@ -40,6 +40,10 @@ public class EmployeeController {
 
         return employeeService.check(id);
     }
+    @GetMapping("/department/{department}")
+    public List<Employee> checking(@PathVariable String department){
 
+        return employeeService.getEmployeeByDepartment(department);
+    }
 
 }

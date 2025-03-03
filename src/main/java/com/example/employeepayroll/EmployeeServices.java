@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Optional;
 @Slf4j
 @Service
-public class EmployeeServices {
+public class EmployeeServices implements IEmployeeService{
     private List<Employee> list = new ArrayList<>();
 
     @Autowired
@@ -66,4 +66,8 @@ public class EmployeeServices {
     }
 
 
+    @Override
+    public List<Employee> getEmployeeByDepartment(String department) {
+        return employeeRepository.findEmployee(department);
+    }
 }
