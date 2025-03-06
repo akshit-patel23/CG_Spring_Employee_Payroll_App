@@ -1,5 +1,5 @@
-2025-02-27 10:28:55 [ERROR] [main] o.s.o.j.LocalContainerEntityManagerFactoryBean - Failed to initialize JPA EntityManagerFactory: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is java.lang.RuntimeException: Driver com.mysql.cj.jdbc.Driver claims to not accept jdbcUrl, ${SPRING_DATASOURCE_URL}
-2025-02-27 10:28:55 [ERROR] [main] o.s.b.SpringApplication - Application run failed
+2025-03-03 16:46:38 [ERROR] [main] o.s.o.j.LocalContainerEntityManagerFactoryBean - Failed to initialize JPA EntityManagerFactory: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is java.lang.RuntimeException: Driver com.mysql.cj.jdbc.Driver claims to not accept jdbcUrl, ${SPRING_DATASOURCE_URL}
+2025-03-03 16:46:38 [ERROR] [main] o.s.b.SpringApplication - Application run failed
 org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is java.lang.RuntimeException: Driver com.mysql.cj.jdbc.Driver claims to not accept jdbcUrl, ${SPRING_DATASOURCE_URL}
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1773)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:599)
@@ -56,8 +56,13 @@ Caused by: java.lang.RuntimeException: Driver com.mysql.cj.jdbc.Driver claims to
 	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:376)
 	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
 	... 20 common frames omitted
+<<<<<<< HEAD
 2025-02-27 13:55:49 [ERROR] [main] o.s.o.j.LocalContainerEntityManagerFactoryBean - Failed to initialize JPA EntityManagerFactory: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is java.lang.RuntimeException: Driver com.mysql.cj.jdbc.Driver claims to not accept jdbcUrl, ${SPRING_DATASOURCE_URL}
 2025-02-27 13:55:49 [ERROR] [main] o.s.b.SpringApplication - Application run failed
+=======
+2025-03-03 16:49:49 [ERROR] [main] o.s.o.j.LocalContainerEntityManagerFactoryBean - Failed to initialize JPA EntityManagerFactory: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is java.lang.RuntimeException: Driver com.mysql.cj.jdbc.Driver claims to not accept jdbcUrl, ${SPRING_DATASOURCE_URL}
+2025-03-03 16:49:49 [ERROR] [main] o.s.b.SpringApplication - Application run failed
+>>>>>>> UC16_CRUDCode
 org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is java.lang.RuntimeException: Driver com.mysql.cj.jdbc.Driver claims to not accept jdbcUrl, ${SPRING_DATASOURCE_URL}
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1773)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:599)
@@ -114,6 +119,7 @@ Caused by: java.lang.RuntimeException: Driver com.mysql.cj.jdbc.Driver claims to
 	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:376)
 	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
 	... 20 common frames omitted
+<<<<<<< HEAD
 2025-02-27 14:55:26 [ERROR] [main] o.s.o.j.LocalContainerEntityManagerFactoryBean - Failed to initialize JPA EntityManagerFactory: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is java.lang.RuntimeException: Driver com.mysql.cj.jdbc.Driver claims to not accept jdbcUrl, ${SPRING_DATASOURCE_URL}
 2025-02-27 14:55:26 [ERROR] [main] o.s.b.SpringApplication - Application run failed
 org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is java.lang.RuntimeException: Driver com.mysql.cj.jdbc.Driver claims to not accept jdbcUrl, ${SPRING_DATASOURCE_URL}
@@ -480,3 +486,7 @@ Caused by: java.sql.SQLSyntaxErrorException: Unknown database 'your_database_nam
 2025-02-27 16:30:43 [WARN] [HikariPool-1 housekeeper] c.z.h.p.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m5s560ms171µs200ns).
 2025-02-27 16:34:03 [WARN] [http-nio-8080-exec-5] o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
 2025-02-27 16:36:28 [WARN] [http-nio-8080-exec-9] o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
+=======
+2025-03-03 16:56:23 [WARN] [http-nio-8080-exec-1] o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `com.example.employeepayroll.Employee` from Array value (token `JsonToken.START_ARRAY`)]
+2025-03-03 16:56:27 [WARN] [http-nio-8080-exec-3] o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `com.example.employeepayroll.Employee` from Array value (token `JsonToken.START_ARRAY`)]
+>>>>>>> UC16_CRUDCode

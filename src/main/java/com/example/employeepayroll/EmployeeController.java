@@ -1,6 +1,4 @@
 package com.example.employeepayroll;
-import com.example.employeepayroll.Employee;
-import com.example.employeepayroll.EmployeeServices;
 import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +9,7 @@ import java.util.Optional;
 
 @Slf4j
 @RestController
-@RequestMapping("/employee")
+@RequestMapping("/employees")
 public class EmployeeController {
     @GetMapping
     public String getEmployee() {
@@ -40,7 +38,7 @@ public class EmployeeController {
         return employeeService.fetchAll();
     }
     @GetMapping("/get/{id}")
-    public Optional<Employee> checking(@PathVariable Long id){
+    public Employee checking(@PathVariable Long id){
 
         return employeeService.check(id);
     }
